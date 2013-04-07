@@ -4,15 +4,32 @@
     <title>Planets of the solar system, to scale.</title>
     <link rel="stylesheet/less" type="text/css" href="styles.less">
     <script src="less.min.js" type="text/javascript"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="script.js"></script>
   </head>
   <body>
-    <div class="meta">
+    <div id="meta">
       <h1>Planets of the solar system, to scale.</h1>
       <p>This page contains a graphical overview of the solar system, all
       to scale.</p>
+      <p>Go to:
+        <a href="sun" class="planet">the sun</a>,
+        <a href="mercury" class="planet">Mercury</a>,
+        <a href="venus" class="planet">Venus</a>,
+        <a href="earth" class="planet">Earth</a>,
+        <a href="mars" class="planet">Mars</a>,
+        <a href="jupiter" class="planet">Jupiter</a>,
+        <a href="saturn" class="planet">Saturn</a>,
+        <a href="uranus" class="planet">Uranus</a>,
+        <a href="neptune" class="planet">Neptune</a>.
+      </p>
     </div>
 
-    <div class="planets">
+    <div id="scrollbar">
+      <div id="scroller"></div>
+    </div>
+    <div id="planets">
       <div id="sun"></div>
       <div id="mercury"></div>
       <div id="venus"></div>
