@@ -1,0 +1,115 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+.radialgradient (@color1, @color2) {
+  background: @color1; /* Old browsers */
+  background: -moz-radial-gradient(center, ellipse cover,  @color1 0%, @color2 100%); /* FF3.6+ */
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,@color1), color-stop(100%,@color2)); /* Chrome,Safari4+ */ background: -webkit-radial-gradient(center, ellipse cover,  @color1 0%,@color2 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover,  @color1 0%,@color2 100%); /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover,  @color1 0%,@color2 100%); /* IE10+ */
+  background: radial-gradient(ellipse at center,  @color1 0%,@color2 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@color1', endColorstr='@color2',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@scale: 4879.4px/10;
+
+.planet (@radius, @aphelion, @perihelion) {
+  @diameter: (@radius*2) / @scale;
+  @distance: ((@aphelion+@perihelion)/2) / @scale;
+
+  position: absolute;
+  top: 50%;
+  left: @distance;
+
+  margin-left: -@diameter/2;
+  margin-top: -@diameter/2;
+
+  height: @diameter;
+  width: @diameter;
+  border-radius: 50%;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.meta {
+  background-color: #fafafa;
+  color: #1f1f1f;
+  padding: 2em;
+  font-family: 'Open Sans', sans-serif;
+
+  h1 {
+    font-size: 32pt;
+  }
+  p {
+    font-size: 16pt;
+  }
+}
+
+.planets {
+  background: #000;
+  margin-right: 200px;
+  width: 100%;
+  height: 100%;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  position: relative;
+
+  #sun {
+    .planet(695500, 0, 0);
+
+    box-shadow: 0 0 500px #F33;
+    .radialgradient(orange, red);
+  }
+  #mercury {
+    .planet(2439.7, 69816900, 46001200);
+
+    box-shadow: 0 0 500px #F33;
+    .radialgradient(orange, red);
+  }
+  #venus {
+    .planet(6051.8, 108939000, 107477000);
+
+    box-shadow: 0 0 500px #F33;
+    .radialgradient(orange, red);
+  }
+  #earth {
+    .planet(6371, 152098232, 147098290);
+
+    box-shadow: 0 0 500px #00F;
+    .radialgradient(blue, green);
+  }
+  #mars {
+    .planet(3396.2, 249209300, 206669000);
+
+    box-shadow: 0 0 500px #F33;
+    .radialgradient(orange, red);
+  }
+  #jupiter {
+    .planet(69911, 816520800, 740573600);
+
+    box-shadow: 0 0 500px #F33;
+    .radialgradient(orange, red);
+  }
+  #saturn {
+    .planet(60268, 1513325783, 1353572956);
+
+    box-shadow: 0 0 500px #F33;
+    .radialgradient(orange, red);
+  }
+  #uranus {
+    .planet(25559, 3004419704, 2748938461);
+
+    box-shadow: 0 0 500px #F33;
+    .radialgradient(orange, red);
+  }
+  #neptune {
+    .planet(24764, 4553946490, 4452940833);
+
+    box-shadow: 0 0 500px #F33;
+    .radialgradient(orange, red);
+  }
+}
