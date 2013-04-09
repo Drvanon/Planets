@@ -1,13 +1,13 @@
-$(document).ready ->
+$ ->
   meta = $("#meta")
   planets = $("#planets")
   scrollbar = $("#scrollbar")
   scroller = $("#scrollbar #scroller")
+  height = $(window).height()
   
   # Fill the rest of the visible page with the Planets element 
-  planets.height $(window).height() - meta.outerHeight(true) - scrollbar.outerHeight(true)
+  planets.height height - meta.outerHeight(true) - scrollbar.outerHeight(true)
   $("a.planet").click (e) ->
-    
     # Get left offset of planet.
     loc = parseInt($("#" + $(this).attr("href")).css("left"), 10)
     
